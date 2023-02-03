@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3d-Cub</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="BOX-Container">
+ <div class="CUBY">
+     <div class="FRONT"><img id="Box1"></div>
+     <div class="BACK"><img id="Box2"></div>
+     <div class="RIGHT"><img id="Box3"></div>
+     <div class="LEFT"><img id="Box4"></div>
+     <div class="TOP"><img id="Box5"></div>
+     <div class="BOTTOM"><img id="Box6"></div>
+</div>
+    </div>
+</body>
+<script>
+    const NewImage =async(id)=>{
+    await fetch('https://randomfox.ca/floof/')
+    .then(res=>res.json())
+    .then(res=>{document.getElementById(id).src=(res.image)});
+    } 
+    for(let i =1;i<7;i++){
+        NewImage('Box'+i);
+    }
+    setInterval(()=>{
+        for(let i =1;i<7;i++){
+        NewImage('Box'+i);
+    }
+    },5000)
+</script>
+
+</html>

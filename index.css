@@ -1,0 +1,64 @@
+body{
+    margin: 0px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    perspective: 600px;
+    
+}
+.BOX-Container{
+    transform-style: preserve-3d;
+    transform: rotateX(90deg);
+    animation: MOVE 5s infinite linear; 
+}
+.CUBY img{
+    height: 100%;
+    width: 100%;
+}
+@keyframes MOVE {
+  0%{    transform: rotateX(90deg);  }
+  25%{    transform: rotateX(45deg);  }
+  50%{    transform: rotateX(120deg);  }
+  75%{    transform: rotateX(180deg);  }
+  100%{    transform: rotateX(90deg);  }
+}
+.CUBY{
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: MOVEMENT 5s linear infinite forwards;
+}
+
+
+.CUBY div{
+position: absolute;
+height: 200px;
+width: 200px;
+}
+.FRONT{
+    transform: translateZ(0px);
+}
+.BACK{
+    transform: translateZ(-200px);
+}
+.RIGHT{
+  transform: rotateY(90deg) translateX(100px) translateZ(100px);
+}
+.LEFT{
+    transform: rotateY(90deg) translateX(100px) translateZ(-100px);
+}
+.TOP{
+    transform: rotateX(90deg) translateY(-100px) translateZ(100px);
+}
+.BOTTOM{
+    transform: rotateX(90deg) translateY(-100px) translateZ(-100px);
+}
+
+
+@keyframes MOVEMENT {
+   1%{transform: rotateZ(0deg);}
+   50%{transform: rotateZ(180deg);}
+   100%{transform: rotateZ(360deg);}
+}
